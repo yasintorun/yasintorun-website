@@ -1,0 +1,139 @@
+@import "./veriables.scss";
+@import "./mixins.scss";
+
+html, body {
+  height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #8f54a0 #ffffff;
+  }
+
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: $tertiary;
+    border-radius: 30px;
+  }
+
+.app {
+    background: $primary;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.terminal {
+    background-color: $secondary;
+    width: #{map-get($breakpoints, "xl") * 0.95};
+    height: 50vh;
+    border: 3px solid $quaternary;
+    border-radius: 1rem;
+    overflow: hidden;
+    min-width: 450px;
+    @include media(xl) {
+        width: 95%;
+    }
+
+    .terminal-header {
+        background-color: $light;
+        color: $dark;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 3px solid $quaternary;
+        padding: 1rem;
+
+        .terminal-header-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            button {
+                background-color: $light;
+                border: none;
+                color: $dark;
+                padding: 0.5rem;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+                border-radius: 0.5rem;
+                font-size: 1.2rem;
+                font-weight: bold;
+                outline: none;
+                border: 1px solid $quaternary;
+                margin-right: 0.5rem;
+                margin-left: 0.5rem;
+                &.close-btn {
+                    background-color: $danger;
+                }
+                &.minimize-btn {
+                    background-color: $warning;
+                }
+                &.maximize-btn {
+                    background-color: $success;
+                }
+                &:hover {
+                    opacity: 0.5;   
+                }
+            }
+        }
+
+        .terminal-header-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: $dark;
+        }
+    }
+
+    .terminal-body {
+        padding: 1rem;
+        color: $light;
+        height: 100%;
+        overflow-y: auto;
+        .terminal-body-content-command {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+        .terminal-prefix {
+            color: $success;
+            font-weight: bold;
+            font-size: 1.3rem;
+            gap: 10px;
+        }
+        input {
+            all: unset;
+            padding: 0.5rem;
+            font-size: 1.2rem;
+            flex: 1;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+$primary: #371b58 !default;
+$secondary: #4c3575 !default;
+$tertiary: #5b4b8a !default;
+$quaternary: #7858a6 !default;
+
+
+$primary-text: #fff !default;
+$secondary-text: #fff !default;
+$tertiary-text: #fff !default;
+$quaternary-text: #fff !default;
+
+$danger: #ff4343 !default;
+$warning: #ffb74d !default;
+$success: #00c851 !default;
+$info: #00bcd4 !default;
+$light: #f5f5f5 !default;
+$dark: #222 !default;
+$white: #fff !default;
+$transparent: transparent !default;
+
+$transition-base: all .15s ease !default;
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
